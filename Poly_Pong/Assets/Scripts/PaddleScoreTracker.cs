@@ -17,8 +17,9 @@ public class PaddleScoreTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (scoreText) scoreText.text = playerName + ": " + score;
     }
+
 
     // Update is called once per frame
     void Update()

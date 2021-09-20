@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetupGame : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class SetupGame : MonoBehaviour
     [Tooltip("The game end manager")]
     public EndGame gameEnder;
 
-    public float[] sideLengths { get; set; } = { 0, 0, 0, 4.5f, 4.5f, 2.8f, 2.3f, 2f, 1.88f };
+    public List<Text> scoreHolders;
 
     // Start is called before the first frame update
     void Start()
@@ -184,6 +185,8 @@ public class SetupGame : MonoBehaviour
             scoreController.playerName = "Player " + (i + 1);
             scoreController.gameEnder = gameEnder;
             scoreController.settings = settings;
+            scoreController.scoreText = scoreHolders[i];
+            scoreController.scoreText.color = settings.paddleColours[i];
             //Make a new end zone
             Instantiate(endZonePrefab, new Vector2((radius + 2) * Mathf.Cos(theta), (radius + 2) * Mathf.Sin(theta)), paddleRotation);
         }
@@ -219,6 +222,8 @@ public class SetupGame : MonoBehaviour
             scoreController.playerName = "Ai " + (i + 1);
             scoreController.gameEnder = gameEnder;
             scoreController.settings = settings;
+            scoreController.scoreText = scoreHolders[i];
+            scoreController.scoreText.color = settings.paddleColours[i];
             //Make a new end zone
             Instantiate(endZonePrefab, new Vector2(radius * 3 * Mathf.Cos(theta), radius * 3 * Mathf.Sin(theta)), paddleRotation);
         }
