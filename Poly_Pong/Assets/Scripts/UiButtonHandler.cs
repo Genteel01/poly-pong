@@ -21,6 +21,8 @@ public class UiButtonHandler : MonoBehaviour
     public Color normalColour;
     [Tooltip("The colour of selected button texts")]
     public Color selectedColour;
+    [Tooltip("The text that shows the current number of points needed to win")]
+    public Text pointsText;
     private void Start()
     {
         foreach (Button b in paddleButtons)
@@ -33,6 +35,7 @@ public class UiButtonHandler : MonoBehaviour
         }
         UpdatePaddles(settings.numberOfPaddles);
         UpdatePlayers(settings.numberOfPlayers);
+        pointsText.text = "" + settings.winningScore;
         //foreach (Text t in paddleTexts)
         //{
         //    t.color = normalColour;
@@ -80,9 +83,11 @@ public class UiButtonHandler : MonoBehaviour
     
     public void UpdateWinningScore(int increase)
     {
-        if((increase < 0 && settings.winningScore > 1) || increase > 0)
+        settings.winningScore += increase;
+        if(settings.winningScore < 1)
         {
-            settings.winningScore += increase;
+            settings.winningScore = 1;
         }
+        pointsText.text = "" + settings.winningScore;
     }
 }
