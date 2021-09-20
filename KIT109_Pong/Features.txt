@@ -1,0 +1,9 @@
+The ball resets upon leaving the screen
+The paddles do not leave the screen
+There are scores
+The game ends upon one player reaching ten points. This displays a message and shows buttons to play again and go back to the menu
+There is a basic ai for the second player
+There is a menu that allows 1 or 2 players to be selected
+There are sound effects for the ball hitting the paddles, the ball hitting the walls, the ball going off screen, and the end of the game
+The ball increases in speed on every hit
+The ball moves at a different angle depending on where on the paddle it hit
