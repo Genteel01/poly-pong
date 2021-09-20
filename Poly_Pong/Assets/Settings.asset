@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   numberOfPaddles: 2
-  numberOfPlayers: 1
+  numberOfPlayers: 2
   up: 7700000011010000080100006900000016010000
   down: 7300000012010000020100006b00000017010000
   paddles:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   paddleColours:

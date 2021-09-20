@@ -30,6 +30,15 @@ public class PaddleMovement : MonoBehaviour
         startY = transform.position.y;
     }
 
+    private void Start()
+    {
+        if(!(transform.rotation.eulerAngles.z < 90 || transform.rotation.eulerAngles.z > 270))
+        {
+            KeyCode tempKeyCode = paddleUp;
+            paddleUp = paddleDown;
+            paddleDown = tempKeyCode;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
