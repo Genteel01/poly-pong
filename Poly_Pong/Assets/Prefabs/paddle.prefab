@@ -132,8 +132,11 @@ MonoBehaviour:
   moveDown: 1
   ai: 0
   ball: {fileID: 0}
-  paddleSpeed: 7
+  aiPaddleSpeed: 1
+  playerPaddleSpeed: 3
   positionChecker: {fileID: 314360836209461548}
+  topBlocker: {fileID: 0}
+  bottomBlocker: {fileID: 0}
 --- !u!61 &2803130421748620510
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,3 +199,5 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 0}
   playerName: 
+  gameEnder: {fileID: 0}
+  settings: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   numberOfPaddles: 8
-  numberOfPlayers: 2
+  numberOfPlayers: 3
   up: 7700000011010000080100006900000016010000
   down: 7300000012010000020100006b00000017010000
   paddles:
@@ -35,4 +35,5 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.98080873, a: 1}
   - {r: 0.4113164, g: 0, b: 1, a: 1}
   winningScore: 1
-  volume: 0
+  aiDifficulty: 1.5
+  volume: 0.76230365

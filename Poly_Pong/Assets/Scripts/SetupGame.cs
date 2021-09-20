@@ -228,5 +228,6 @@ public class SetupGame : MonoBehaviour
             Instantiate(topPrefab, new Vector2(0, 4), Quaternion.Euler(0, 0, 90));
             Instantiate(bottomPrefab, new Vector2(0, -4), Quaternion.Euler(0, 0, 90));
         }
+        settings.SetPaddleSpeeds();
     }
 }

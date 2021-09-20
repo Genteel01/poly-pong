@@ -26,6 +26,17 @@ public class UiButtonHandler : MonoBehaviour
 
     [Tooltip("The slider that controls the volume")]
     public Slider volumeSlider;
+
+    [Tooltip("The buttons to control what the difficulty is")]
+    public List<Button> difficultyButtons;
+    //The text objects for the above buttons
+    public List<Text> difficultyTexts = new List<Text>();
+
+
+    [Tooltip("The buttons to control how many points you need to win")]
+    public List<Button> pointsButtons;
+    //The text objects for the above buttons
+    public List<Text> pointsTexts = new List<Text>();
     private void Start()
     {
         foreach (Button b in paddleButtons)
@@ -36,20 +47,20 @@ public class UiButtonHandler : MonoBehaviour
         {
             playerTexts.Add(b.GetComponentInChildren<Text>());
         }
+        foreach (Button b in difficultyButtons)
+        {
+            difficultyTexts.Add(b.GetComponentInChildren<Text>());
+        }
+        foreach (Button b in pointsButtons)
+        {
+            pointsTexts.Add(b.GetComponentInChildren<Text>());
+        }
         UpdatePaddles(settings.numberOfPaddles);
         UpdatePlayers(settings.numberOfPlayers);
+        ChangeDifficulty(settings.aiDifficulty);
+        UpdateWinningScore(0);
         pointsText.text = "" + settings.winningScore;
         volumeSlider.value = settings.volume;
-        //foreach (Text t in paddleTexts)
-        //{
-        //    t.color = normalColour;
-        //}
-        //paddleTexts[settings.numberOfPaddles - 2].color = selectedColour;
-        //foreach (Text t in playerTexts)
-        //{
-        //    t.color = normalColour;
-        //}
-        //playerTexts[settings.numberOfPlayers - 1].color = selectedColour;
     }
     public void UpdatePaddles(int newAmount)
     {
@@ -87,10 +98,21 @@ public class UiButtonHandler : MonoBehaviour
     
     public void UpdateWinningScore(int increase)
     {
+        foreach (Text t in pointsTexts)
+        {
+            t.color = selectedColour;
+        }
         settings.winningScore += increase;
         if(settings.winningScore < 1)
         {
             settings.winningScore = 1;
+        }
+        if(settings.winningScore == 1)
+        {
+            foreach (Text t in pointsTexts)
+            {
+                t.color = normalColour;
+            }
         }
         pointsText.text = "" + settings.winningScore;
     }
@@ -98,5 +120,26 @@ public class UiButtonHandler : MonoBehaviour
     public void ChangeVolume(float value)
     {
         settings.volume = value;
+    }
+
+    public void ChangeDifficulty(float value)
+    {
+        settings.aiDifficulty = value;
+        foreach (Text t in difficultyTexts)
+        {
+            t.color = normalColour;
+        }
+        switch(value)
+        {
+            case 1f:
+                difficultyTexts[0].color = selectedColour;
+                break;
+            case 1.5f:
+                difficultyTexts[1].color = selectedColour;
+                break;
+            case 2f:
+                difficultyTexts[2].color = selectedColour;
+                break;
+        }
     }
 }

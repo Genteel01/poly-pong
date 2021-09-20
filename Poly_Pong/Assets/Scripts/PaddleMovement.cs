@@ -12,7 +12,8 @@ public class PaddleMovement : MonoBehaviour
 
     public bool ai;
     public GameObject ball;
-    public float paddleSpeed;
+    public float aiPaddleSpeed;
+    public float playerPaddleSpeed;
     private Vector2 aiMove;
     float startX, startY;
 
@@ -40,14 +41,14 @@ public class PaddleMovement : MonoBehaviour
                 {
                     if (moveUp)
                     {
-                        transform.Translate(new Vector3(0, 1 * paddleSpeed * Time.deltaTime));
+                        transform.Translate(new Vector3(0, 1 * playerPaddleSpeed * Time.deltaTime));
                     }
                 }
                 if (Input.GetKey(paddleDown))
                 {
                     if (moveDown)
                     {
-                        transform.Translate(new Vector3(0, -1 * paddleSpeed * Time.deltaTime));
+                        transform.Translate(new Vector3(0, -1 * playerPaddleSpeed * Time.deltaTime));
                     }
                 }
             }
@@ -67,7 +68,7 @@ public class PaddleMovement : MonoBehaviour
                     if(moveUp)
                     {
                         //Move the paddle towards this new position
-                        transform.position = Vector2.MoveTowards(transform.position, positionChecker.transform.position, paddleSpeed / 130);
+                        transform.position = Vector2.MoveTowards(transform.position, positionChecker.transform.position, aiPaddleSpeed * Time.deltaTime);
                     }
                 }
                 else
@@ -83,7 +84,7 @@ public class PaddleMovement : MonoBehaviour
                         if (moveDown)
                         {
                             //Move the paddle towards this new position
-                            transform.position = Vector2.MoveTowards(transform.position, positionChecker.transform.position, paddleSpeed * Time.deltaTime);
+                            transform.position = Vector2.MoveTowards(transform.position, positionChecker.transform.position, aiPaddleSpeed * Time.deltaTime);
                         }
                     }
                 }

@@ -16,6 +16,8 @@ public class Settings : ScriptableObject
 
     public int winningScore = 10;
 
+    public float aiDifficulty = 1;
+
     [Range(0, 1)]
     public float volume = 1;
     public void ResetPaddlePositions()
@@ -23,6 +25,14 @@ public class Settings : ScriptableObject
         foreach(GameObject g in paddles)
         {
             g.GetComponent<PaddleMovement>().ResetPosition();
+        }
+    }
+
+    public void SetPaddleSpeeds()
+    {
+        foreach (GameObject g in paddles)
+        {
+            g.GetComponent<PaddleMovement>().aiPaddleSpeed = aiDifficulty;
         }
     }
 }
