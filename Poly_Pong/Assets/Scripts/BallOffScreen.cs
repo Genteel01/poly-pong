@@ -34,10 +34,11 @@ public class BallOffScreen : MonoBehaviour
             // if off the screen, destroy self
             GetComponent<BallMovement>().RandomBallMovement();
             //scores.AddPoint(1);
-            lastHitPaddle.UpdateScore(1);
+            if(lastHitPaddle) lastHitPaddle.UpdateScore(1);
             offScreenSound.Play();
             //Reset the paddles
             settings.ResetPaddlePositions();
+            lastHitPaddle = null;
         }
     }
     public void FixedUpdate()

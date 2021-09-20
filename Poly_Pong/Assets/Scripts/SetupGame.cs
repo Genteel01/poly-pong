@@ -126,12 +126,20 @@ public class SetupGame : MonoBehaviour
 
     void CreatePaddles(int numberOfPaddles, int numberOfPlayers)
     {
-        float radius = 0.8f * numberOfPaddles * 0.7f;
+        //float radius = 0.8f * numberOfPaddles * 0.3f * numberOfPaddles;
+        float radius = 4;
+        if(numberOfPaddles == 3)
+        {
+            radius = 2.5f;
+        }
         float dTheta = (Mathf.PI * 2) / numberOfPaddles;
 
         float blockerOffset = radius * 0.5f;
         switch(numberOfPaddles)
         {
+            case 2:
+                blockerOffset = 4;
+                break;
             case 3:
                 blockerOffset = (radius / Mathf.Sin(dTheta)) * 2 * Mathf.Cos(dTheta) * -1.5f;
                 break;
@@ -166,8 +174,8 @@ public class SetupGame : MonoBehaviour
             paddleController.paddleDown = settings.down[i];
             //If there are more than 2 paddles, create invisible walls to stop the paddle from moving too far to each side.
             //If there are only 2 paddles this function will be performed by the top and bottom walls that the ball bounces off.
-            if (numberOfPaddles > 2)
-            {
+            //if (numberOfPaddles > 2)
+            //{
                 //Move the position checker object to the top of its side, create a wall at its position, move it to the bottom, create another wall, and move it back to the start.
                 paddleController.positionChecker.transform.Translate(new Vector3(0, blockerOffset));
                 GameObject topWall = (GameObject)Instantiate(smallTopPrefab, paddleController.positionChecker.transform.position, paddleRotation);
@@ -176,7 +184,7 @@ public class SetupGame : MonoBehaviour
                 GameObject bottomWall = (GameObject)Instantiate(smallBottomPrefab, paddleController.positionChecker.transform.position, paddleRotation);
                 paddleController.bottomBlocker = bottomWall;
                 paddleController.positionChecker.transform.Translate(new Vector3(0, blockerOffset));
-            }
+            //}
             //Add the paddle to the list of paddles
             settings.paddles.Add(newPaddle);
             newPaddle.GetComponent<SpriteRenderer>().color = settings.paddleColours[i];
@@ -203,8 +211,8 @@ public class SetupGame : MonoBehaviour
             paddleController.ai = true;
             //If there are more than 2 paddles, create invisible walls to stop the paddle from moving too far to each side.
             //If there are only 2 paddles this function will be performed by the top and bottom walls that the ball bounces off.
-            if (numberOfPaddles > 2)
-            {
+            //if (numberOfPaddles > 2)
+            //{
                 //Move the position checker object to the top of its side, create a wall at its position, move it to the bottom, create another wall, and move it back to the start.
                 paddleController.positionChecker.transform.Translate(new Vector3(0, blockerOffset));
                 GameObject topWall = (GameObject)Instantiate(smallTopPrefab, paddleController.positionChecker.transform.position, paddleRotation);
@@ -213,7 +221,7 @@ public class SetupGame : MonoBehaviour
                 GameObject bottomWall = (GameObject)Instantiate(smallBottomPrefab, paddleController.positionChecker.transform.position, paddleRotation);
                 paddleController.bottomBlocker = bottomWall;
                 paddleController.positionChecker.transform.Translate(new Vector3(0, blockerOffset));
-            }
+            //}
             //Add the paddle to the list of paddles
             settings.paddles.Add(newPaddle);
             newPaddle.GetComponent<SpriteRenderer>().color = settings.paddleColours[i];

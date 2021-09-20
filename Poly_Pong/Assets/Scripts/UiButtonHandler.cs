@@ -131,13 +131,13 @@ public class UiButtonHandler : MonoBehaviour
         }
         switch(value)
         {
-            case 1f:
+            case 1.5f:
                 difficultyTexts[0].color = selectedColour;
                 break;
-            case 1.5f:
+            case 2f:
                 difficultyTexts[1].color = selectedColour;
                 break;
-            case 2f:
+            case 2.5f:
                 difficultyTexts[2].color = selectedColour;
                 break;
         }

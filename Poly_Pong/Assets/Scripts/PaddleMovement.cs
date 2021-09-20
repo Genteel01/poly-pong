@@ -97,13 +97,11 @@ public class PaddleMovement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.CompareTag("Top") || other.CompareTag("PaddleTop"))
-        if (other.CompareTag("Top") || other.gameObject == topBlocker)
+        if (other.gameObject == topBlocker)
         {
             moveUp = false;
         }
-        //if (other.CompareTag("Bottom") || other.CompareTag("PaddleBottom"))
-        if (other.CompareTag("Bottom") || other.gameObject == bottomBlocker)
+        else if (other.gameObject == bottomBlocker)
         {
             moveDown = false;
         }
@@ -111,13 +109,11 @@ public class PaddleMovement : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        //if (other.CompareTag("Top") || other.CompareTag("PaddleTop"))
-        if (other.CompareTag("Top") || other.gameObject == topBlocker)
+        if (other.gameObject == topBlocker)
         {
             moveUp = true;
         }
-        //if (other.CompareTag("Bottom") || other.CompareTag("PaddleBottom"))
-        if (other.CompareTag("Bottom") || other.gameObject == bottomBlocker)
+        else if (other.gameObject == bottomBlocker)
         {
             moveDown = true;
         }
