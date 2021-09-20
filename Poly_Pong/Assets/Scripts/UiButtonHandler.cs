@@ -77,4 +77,12 @@ public class UiButtonHandler : MonoBehaviour
         }
         playerTexts[newAmount - 1].color = selectedColour;
     }
+    
+    public void UpdateWinningScore(int increase)
+    {
+        if((increase < 0 && settings.winningScore > 1) || increase > 0)
+        {
+            settings.winningScore += increase;
+        }
+    }
 }
