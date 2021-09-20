@@ -15,6 +15,9 @@ public class Settings : ScriptableObject
     public List<Color> paddleColours;
 
     public int winningScore = 10;
+
+    [Range(0, 1)]
+    public float volume = 1;
     public void ResetPaddlePositions()
     {
         foreach(GameObject g in paddles)

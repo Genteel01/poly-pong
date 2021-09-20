@@ -23,6 +23,9 @@ public class UiButtonHandler : MonoBehaviour
     public Color selectedColour;
     [Tooltip("The text that shows the current number of points needed to win")]
     public Text pointsText;
+
+    [Tooltip("The slider that controls the volume")]
+    public Slider volumeSlider;
     private void Start()
     {
         foreach (Button b in paddleButtons)
@@ -36,6 +39,7 @@ public class UiButtonHandler : MonoBehaviour
         UpdatePaddles(settings.numberOfPaddles);
         UpdatePlayers(settings.numberOfPlayers);
         pointsText.text = "" + settings.winningScore;
+        volumeSlider.value = settings.volume;
         //foreach (Text t in paddleTexts)
         //{
         //    t.color = normalColour;
@@ -89,5 +93,10 @@ public class UiButtonHandler : MonoBehaviour
             settings.winningScore = 1;
         }
         pointsText.text = "" + settings.winningScore;
+    }
+
+    public void ChangeVolume(float value)
+    {
+        settings.volume = value;
     }
 }

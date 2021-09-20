@@ -810,6 +810,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4055489306289166854, guid: 9d659e2348e320c4e8d950f1e2cadc1c,
+        type: 3}
+      propertyPath: presence.state
+      value: In Game
+      objectReference: {fileID: 0}
     - target: {fileID: 4170253839426914957, guid: 9d659e2348e320c4e8d950f1e2cadc1c,
         type: 3}
       propertyPath: settings
@@ -824,11 +829,6 @@ PrefabInstance:
     - target: {fileID: 4170253839426914957, guid: 9d659e2348e320c4e8d950f1e2cadc1c,
         type: 3}
       propertyPath: detail
-      value: In Game
-      objectReference: {fileID: 0}
-    - target: {fileID: 4055489306289166854, guid: 9d659e2348e320c4e8d950f1e2cadc1c,
-        type: 3}
-      propertyPath: presence.state
       value: In Game
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -937,7 +937,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f78198eab036f4290386a5a7675e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorer: {fileID: 0}
   victoryText: {fileID: 1448969864}
   playAgain: {fileID: 1472244757}
   ball: {fileID: 1132047165}
@@ -945,6 +944,7 @@ MonoBehaviour:
   backToMenuButton: {fileID: 2072564562}
   backToMenuText: {fileID: 276707483}
   endGameNoise: {fileID: 752007602}
+  settings: {fileID: 11400000, guid: 494a87df11cbd794d961fdbcd4f87687, type: 2}
 --- !u!4 &752007601
 Transform:
   m_ObjectHideFlags: 0
@@ -1425,7 +1425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05c1520ace6b8a4b8d1b03734df018f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scores: {fileID: 0}
   offScreenSound: {fileID: 1132047174}
   settings: {fileID: 11400000, guid: 494a87df11cbd794d961fdbcd4f87687, type: 2}
   lastHitPaddle: {fileID: 0}

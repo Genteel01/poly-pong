@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallOffScreen : MonoBehaviour
 {
-    public Scores scores;
+    //public Scores scores;
     public AudioSource offScreenSound;
 
     public Settings settings;
@@ -13,7 +13,7 @@ public class BallOffScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        offScreenSound.volume = settings.volume;
     }
 
     // Update is called once per frame

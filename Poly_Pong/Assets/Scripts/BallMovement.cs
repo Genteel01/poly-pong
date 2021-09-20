@@ -27,6 +27,10 @@ public class BallMovement : MonoBehaviour
         paddleOffset *= Mathf.Rad2Deg;
         minAngle = paddleOffset * -0.75f;
         maxAngle = paddleOffset * 0.75f;
+
+        ballHitWall.volume = settings.volume;
+        ballHitPaddle.volume = settings.volume;
+
     }
     // Start is called before the first frame update
     void Start()

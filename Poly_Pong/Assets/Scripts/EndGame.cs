@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EndGame : MonoBehaviour
 {
-    public Scores scorer;
+    //public Scores scorer;
     public Text victoryText;
     public Text playAgain;
     public GameObject ball;
@@ -16,6 +16,11 @@ public class EndGame : MonoBehaviour
 
     public AudioSource endGameNoise;
 
+    public Settings settings;
+    private void Start()
+    {
+        endGameNoise.volume = settings.volume;
+    }
 
     public void GameEnder(string winText)
     {

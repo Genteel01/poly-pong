@@ -35,3 +35,4 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.98080873, a: 1}
   - {r: 0.4113164, g: 0, b: 1, a: 1}
   winningScore: 1
+  volume: 0
