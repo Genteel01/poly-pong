@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e040fc33c0cd046ab0003f8b44d61b, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  numberOfPaddles: 2
+  numberOfPaddles: 5
   numberOfPlayers: 2
-  up: 7700000011010000080100006900000016010000
-  down: 7300000012010000020100006b00000017010000
+  up: 770000001101000016010000690000000d000000740000000900000008010000
+  down: 7300000012010000170100006b0000002f010000670000003001000002010000
   paddles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   paddleColours:
